@@ -31,8 +31,8 @@ public class Main {
                 merge(filelist.get(i), filelist.get(i + 1), i,pick);
                 index=i;
             }
-//            File dir=new File(System.getProperty("user.dir") + "\\temp_files\\");
-//            removefiles(dir,index);
+            File dir=new File(System.getProperty("user.dir") + "\\temp_files\\");
+            removefiles(dir,index);
         }
         else if(num==1){//For the fast mode, I didn't output every information about the paper,
             // because if the program sorts the whole json file in memory, It will cost large than 10 GB. So I just output the titles of papers in order of the importance.
