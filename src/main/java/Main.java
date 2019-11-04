@@ -130,7 +130,7 @@ public class Main {
 
                 } else {
                     tempfile = new File(System.getProperty("user.dir") + "\\temp_files\\tempfile" + files_counter);
-                    out = new BufferedWriter(new FileWriter(tempfile), 32768);
+                    out = new BufferedWriter(new FileWriter(tempfile,true), 32768);
                      //out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(tempfile, true), "UTF-8"), 3*10 * 1024);
                     out.write(line);
                     out.newLine();
@@ -197,7 +197,7 @@ public class Main {
         Gson gson = new Gson();
         BufferedWriter out = null;
         String line = gson.toJson(papers);
-        out = new BufferedWriter(new FileWriter(tempfilesorted), 32768);
+        out = new BufferedWriter(new FileWriter(tempfilesorted,true), 32768);
         //out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(tempfilesorted, true), "UTF-8"), 3*10 * 1024);
         out.write(line);
         out.newLine();
@@ -213,7 +213,7 @@ public class Main {
 //        BufferedInputStream inputStream_right = new BufferedInputStream(new FileInputStream(right));
 //        BufferedReader in_right = new BufferedReader(new InputStreamReader(inputStream_right, "utf-8"), 3*10 * 1024);
         File file_sorted = new File(System.getProperty("user.dir") + "\\temp_files\\file_sorted" + filecounter);
-        BufferedWriter out = new BufferedWriter(new FileWriter(file_sorted), 32768);
+        BufferedWriter out = new BufferedWriter(new FileWriter(file_sorted,true), 32768);
        // BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file_sorted, true), "UTF-8"), 3*10 * 1024);
         String line_right;
         List<Dblp_Model> papers_right = new ArrayList<>();
