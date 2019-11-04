@@ -12,13 +12,13 @@ public class Main {
 
     public static void main(String args[]) throws IOException {
         Scanner input = new Scanner(System.in);
-        System.out.println("1. slow mode (consuming less memory)");
-        System.out.println("2. fast mode (consuming large memory)");
+        System.out.println("1. Fast mode (consuming large memory)");
+        System.out.println("2. slow mode (consuming less memory depend on the times of splitting the large file, I choose like 7 times )");
         System.out.print("Enter the number: ");
         long startTime = System.currentTimeMillis();
 
         int num = input.nextInt();
-        if(num==1){// For the slow mode, I split the files in several small files, then sorts the small file and finally merge one by one, hence it won't cost lots of memory.
+        if(num==2){// For the slow mode, I split the files in several small files, then sorts the small file and finally merge one by one, hence it won't cost lots of memory.
                     // But the process is really slow.
             System.out.println("1. Rank by id");
             System.out.println("2. Rank by Title");
@@ -31,10 +31,10 @@ public class Main {
                 merge(filelist.get(i), filelist.get(i + 1), i,pick);
                 index=i;
             }
-            File dir=new File(System.getProperty("user.dir") + "\\temp_files\\");
-            removefiles(dir,index);
+//            File dir=new File(System.getProperty("user.dir") + "\\temp_files\\");
+//            removefiles(dir,index);
         }
-        else if(num==2){//For the fast mode, I didn't output every information about the paper,
+        else if(num==1){//For the fast mode, I didn't output every information about the paper,
             // because if the program sorts the whole json file in memory, It will cost large than 10 GB. So I just output the titles of papers in order of the importance.
         System.out.println("1. Rank by id");
         System.out.println("2. Rank by Title");
